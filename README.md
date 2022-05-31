@@ -23,7 +23,7 @@ You can host your files on the web easily using https://fly.io
 
 - Install `flyctl` tool from https://fly.io
 - Run `flyctl auth signup` once to get a free account
-- Copy your data files into the data folder here
+- Copy your data files into the `data` folder here
 - run `flyctl launch`
 
 
