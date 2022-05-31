@@ -1,0 +1,10 @@
+header:
+  title: XY Points
+
+layout:
+  row1:
+    type: points
+    dataset: 'points.csv'
+    projection: 'EPSG:25832'
+    # don't need projection if columns end in _lat and _lon
+

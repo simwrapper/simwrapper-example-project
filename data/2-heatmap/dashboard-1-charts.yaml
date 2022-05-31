@@ -1,0 +1,17 @@
+version: 1
+
+header:
+  title: Heatmap
+
+layout:
+  row1:
+    - title: "Heatmap"
+      type: heatmap
+      props:
+        dataset: "trips-tod-wide.csv"
+        y: depart
+        columns: ['Home','Work','atwork','eatout','escort','othdiscr','othmaint',
+                  'school','shopping','social','univ','work']
+        xAxisTitle: "Time of Day"
+        yAxisTitle: "Activity Type"
+        flipAxes: true

@@ -1,0 +1,14 @@
+.project-header {
+  background-color: #924;
+}
+
+.project-header h1, .project-header p {
+  color: white;
+}
+
+
+.project-header a {
+  color: #aaa;
+  font-weight: bold;
+}
+
