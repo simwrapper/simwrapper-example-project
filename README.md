@@ -2,15 +2,15 @@
 
 These files show some examples of some of the things you can do with SimWrapper. Check out the full docs at https://simwrapper.github.io
 
-## Viewing these files
+## Viewing these files locally
 
 SimWrapper is at https://simwrapper.github.io/site
 
 - If you're using Google Chrome or MS Edge, you can click "Add Folder" on the main
   SimWrapper page, browse to this folder, and give Chrome read access to this folder
 
-- For Firefox/Safari, run either 
-   - `java -far mini-file-server.jar` in this folder; or
+- For Firefox/Safari, you can view local folders by running either 
+   - `java -jar mini-file-server.jar` in this folder; or
    - `simwrapper serve` to run the python tool (use `pip install simwrapper` first)
 
 Note that you have to reload your browser after you change any local files on your computer;
