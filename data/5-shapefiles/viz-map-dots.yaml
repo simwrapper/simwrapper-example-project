@@ -1,0 +1,28 @@
+title: "DOTS"
+description: /shapefiles/TAZ
+zoom: 12.4
+center:
+    - -122.44
+    - 37.77
+shapes: sftaz_connectsf.shp
+display:
+    fill:
+        dataset: sftaz_connectsf.shp
+        columnName: Nhood
+        colorRamp:
+            ramp: Viridis
+            steps: 9
+    lineColor:
+        dataset: sftaz_connectsf.shp
+        columnName: AREALAND
+        colorRamp:
+            ramp: Tableau10
+            steps: 9
+    lineWidth:
+        dataset: sftaz_connectsf.shp
+        columnName: TAZ
+        scaleFactor: 100
+    radius:
+        dataset: sftaz_connectsf.shp
+        columnName: AREALAND
+        scaleFactor: 10000

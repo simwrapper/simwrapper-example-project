@@ -1,0 +1,24 @@
+title: HEIGHTs - 
+description: /shapefiles/TAZ
+zoom: 11
+center:
+    - -122.45
+    - 37.76
+shapes: sftaz_connectsf.shp
+datasets: {}
+display:
+    fill:
+        dataset: sftaz_connectsf.shp
+        columnName: Nhood
+        normalize: ""
+        colorRamp:
+            ramp: Viridis
+            steps: 9
+    lineColor:
+        generatedColors:
+            - ""
+    fillHeight:
+        dataset: sftaz_connectsf.shp
+        columnName: TAZ
+        normalize: sftaz_connectsf.shp:SQ_MILE
+        scaleFactor: 50
