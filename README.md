@@ -1,29 +1,31 @@
 # SimWrapper Example Project
 
-These files show some examples of some of the things you can do with SimWrapper. Check out the full docs at https://simwrapper.github.io
+These files provide examples of some of the things you can do with SimWrapper. Check out the full docs at https://simwrapper.github.io
 
-## Viewing these files locally
+- Make a local clone of this repo on your computer.
 
-SimWrapper is at https://simwrapper.github.io/site
+- Browse to https://simwrapper.github.io/site
 
-- If you're using Google Chrome or MS Edge, you can click "Add Folder" on the main
-  SimWrapper page, browse to this folder, and give Chrome read access to this folder
+- If you're using **Google Chrome or MS Edge**, you can click "Add Folder" on the main SimWrapper page, browse to the `data` folder in your clone, and give Chrome read access to it.
 
-- For Firefox/Safari, you can view local folders by running either 
-   - `java -jar mini-file-server.jar` in this folder; or
+- For **Firefox/Safari,** you need to install a little helper app that enables those browsers to view local files. You can run either 
+   - `java -jar mini-file-server.jar` in your cloned folder; or
    - `simwrapper serve` to run the python tool (use `pip install simwrapper` first)
+   - Both tools simply provide a tiny file server on localhost:8080 that serves up files & folders in the directory in which it was started.
+   - Now you can go to https://simwrapper.github.io/site/local/ to see the data files.
 
-Note that you have to reload your browser after you change any local files on your computer;
-all browsers cache results and won't show your changes until you click reload.
+## Instructions for hosting SimWrapper projects on the web using fly.io
 
+You can host your project site easily on the web, using https://fly.io which has a nice free tier up to 5GB (check their pricing for details)
 
-## Instructions for hosting SimWrapper on fly.io
+First time setup:
 
-You can host your files on the web easily using https://fly.io
-
-- Install `flyctl` tool from https://fly.io
+- Install `flyctl` tool from https://fly.io/docs/hands-on/installing/
 - Run `flyctl auth signup` once to get a free account
-- Copy your data files into the `data` folder here
-- run `flyctl launch`
+
+Then:
+
+- Copy your own files & folders into the `data` folder, or edit the example files as a test first
+- run `flyctl launch` and answer the prompts.
 
 
