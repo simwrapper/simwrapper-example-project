@@ -26,7 +26,9 @@ First time setup:
 
 Then:
 
-- Copy your own files & folders into the `data` folder, or edit the example files as a test first
-- run `flyctl launch` and answer the prompts.
+- Copy your data files & folders into the `data` folder here (you can just use the example files as a test first, if you want! It's free)
+- run `flyctl launch` and answer the prompts, noting the site name
+- Your site is now live at the https://your-site-name.fly.dev
 
+Full documentation of SimWrapper is at https://simwrapper.github.io. Have fun!
 
