@@ -13,7 +13,7 @@ These files provide examples of some of the things you can do with SimWrapper. C
    - `simwrapper serve` to run the python tool (use `pip install simwrapper` first)
    - Both tools simply provide a tiny file server on localhost:8080 that serves up files & folders in the directory in which it was started.
    - Now you can go to https://simwrapper.github.io/site/local/ to see the data files.
-   - Note this helper is only necessary for viewing local files on your computer: if you publish a SimWrapper site to the web, anyone will be able to access it, regardless of browser.
+   - **Note:** this helper is only necessary for viewing _local files on your computer:_ if you publish a SimWrapper site to the web, anyone will be able to access it, regardless of browser.
 
 ## Instructions for hosting SimWrapper projects on the web using fly.io
 
