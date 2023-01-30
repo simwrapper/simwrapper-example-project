@@ -5,16 +5,15 @@ header:
 
 layout:
   map:
-    - type: "links"
+      type: "links"
       title: "Overview"
       description: "Simulated volumes in the study area. These do not represent real volumes, but down-sampled volumes of agents using their car for private transport."
       height: 12
-      props:
-        csvFile: "*ink_volumes.csv"
-        geojsonFile: "network.geojson.gz"
-        center: [6.779091, 51.23347]
-        zoom: 11
-        display:
+      csvFile: "*ink_volumes.csv"
+      geojsonFile: "network.geojson.gz"
+      center: [6.779091, 51.23347]
+      zoom: 11
+      display:
           color:
             dataset: csvFile
             columnName: volume
@@ -25,5 +24,5 @@ layout:
           width:
             dataset: csvFile
             columnName: volume
-            scaleFactor: 1
+            scaleFactor: 1000
 

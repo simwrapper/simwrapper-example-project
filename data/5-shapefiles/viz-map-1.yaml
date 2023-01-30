@@ -1,12 +1,12 @@
 title: "Neighborhood map"
 description: shapefiles/TAZ
-shapes: sftaz_connectsf.shp
+shapes: sf-taz.shp
 zoom: 12
 center: [ -122.44, 37.77 ]
 datasets: {}
 display:
     fill:
-        dataset: sftaz_connectsf.shp
+        dataset: sf-taz.shp
         columnName: Nhood
         colorRamp:
             ramp: Paired
