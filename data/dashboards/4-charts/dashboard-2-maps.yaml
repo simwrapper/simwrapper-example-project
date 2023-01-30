@@ -1,0 +1,68 @@
+version: 1
+
+header:
+  title: Maps Etc
+
+layout:
+  carriers:
+    - title: "Carriers"
+      description: "Grocery delivery simulation"
+      type: carriers
+      height: 10
+      network: "output_network.json.gz"
+      carriers: "output_carriers.xml.gz"
+
+  maps:
+    - title: "DRT Pickups/Dropoffs"
+      description: "Total DRT origins/destinations by area"
+      type: hexagons
+      height: 8
+      file: drt_trips_drt.csv.gz
+      projection: "EPSG:31468"
+      center: [13.45, 52.4]
+      aggregations:
+        O/D Summary:
+          - title: Origins
+            x: fromX
+            y: fromY
+          - title: Destinations
+            x: toX
+            y: toY
+        Base Runs:
+          - title: Origins
+            x: fromX
+            y: fromY
+          - title: Destinations
+            x: toX
+            y: toY
+
+  charts:
+    - title: "Mode SHIFT: Base -> Future"
+      description: "mode shifts vs. yesterday"
+      type: sankey
+      height: 8
+      csv: tour_mode_to_trip_mode.csv
+
+    - title: "Heatmap"
+      type: heatmap
+      dataset: "../2-heatmap/trips-tod-wide.csv"
+      y: depart
+      columns: ['Home','Work','atwork','eatout','escort','othdiscr','othmaint',
+                'school','shopping','social','univ','work']
+      xAxisTitle: "Time of Day"
+      yAxisTitle: "Activity Type"
+      flipAxes: true
+
+  broken:
+    - title: "(Broken) DRT Trips by PLZ Code"
+      description: "Berlin PLZ from (...source)"
+      type: map
+      height: 8
+      boundaries: "berlin-plz.geojson"
+      boundariesJoinCol: "plz"
+      boundariesLabels: "PLAZ"
+      dataset: "drt-trips-by-plz.tsv"
+      datasetJoinCol: "plz"
+      datasetValue: "toPerSqKm"
+      exponentColors: true
+
