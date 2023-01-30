@@ -1,0 +1,101 @@
+version: 1
+
+header:
+  title: Maps Etc
+
+layout:
+  carriers:
+    - title: "Carriers"
+      description: "Grocery delivery simulation"
+      type: carriers
+      height: 10
+      props:
+        network: "output_network.json.gz"
+        carriers: "output_carriers.xml.gz"
+
+  maps:
+    - title: "DRT Trips by PLZ Code"
+      description: "Berlin PLZ from (...source)"
+      type: map
+      height: 8
+      props:
+        boundaries: "berlin-plz.geojson"
+        boundariesJoinCol: "plz"
+        boundariesLabels: "PLAZ"
+        dataset: "drt-trips-by-plz.tsv"
+        datasetJoinCol: "plz"
+        datasetValue: "toPerSqKm"
+        exponentColors: true
+
+    - title: "DRT Pickups/Dropoffs"
+      description: "Total DRT origins/destinations by area"
+      type: hexagons
+      height: 8
+      props:
+        file: drt_trips_drt.csv.gz
+        projection: "EPSG:31468"
+        center: [13.45, 52.4]
+        aggregations:
+          O/D Summary:
+            - title: Origins
+              x: fromX
+              y: fromY
+            - title: Destinations
+              x: toX
+              y: toY
+          Base Runs:
+            - title: Origins
+              x: fromX
+              y: fromY
+            - title: Destinations
+              x: toX
+              y: toY
+
+  links:
+    - type: "links"
+      title: "Emissions"
+      description: "Traffic-related emissions in g/m"
+      height: 8
+      props:
+        csvFile: "emissionPerLinkPerM.csv"
+          #csvBase: "../../0-base/link-analysis/emissionPerLinkPerM_cleaned.csv"
+        geojsonFile: "berlin-v5.5-network.geo.json"
+        widthFactor: 0
+        sampleRate: 0.1
+
+  row0:
+    - title: "Mode SHIFT: Base -> Future"
+      description: "mode shifts vs. yesterday"
+      type: sankey
+      height: 8
+      props:
+        csv: tour_mode_to_trip_mode.csv
+
+    - title: "Heatmap"
+      type: heatmap
+      props:
+        dataset: "trips-tod-wide.csv"
+        y: depart
+        columns: ['Home','Work','atwork','eatout','escort','othdiscr','othmaint',
+                  'school','shopping','social','univ','work']
+        xAxisTitle: "Time of Day"
+        yAxisTitle: "Activity Type"
+        flipAxes: true
+
+  row2:
+    - title: "Mode Share - Final"
+      description: "From modestats.txt summary"
+      type: pie
+      props:
+        dataset: "*modestats.txt"
+        useLastRow: true
+        ignoreColumns: [ "Iteration" ]
+
+    - title: "Mode Share Progression"
+      description: "From modestats.txt summary"
+      type: area
+      width: 1
+      props:
+        dataset: "*modestats.txt"
+        x: "Iteration"
+

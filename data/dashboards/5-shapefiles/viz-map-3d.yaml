@@ -1,0 +1,26 @@
+title: "3D Example"
+description: "Zone numbers, normalized by area"
+zoom: 11
+pitch: 20
+bearing: 0
+center:
+    - -122.43
+    - 37.76
+shapes: sf-taz.shp
+datasets: {}
+display:
+    fill:
+        dataset: sf-taz.shp
+        columnName: lg_nhood
+        colorRamp:
+            ramp: Paired
+            steps: 9
+    lineColor:
+        fixedColors:
+            - ""
+    fillHeight:
+        dataset: sf-taz.shp
+        columnName: TAZ
+        normalize: sf-taz.shp:SQ_MILE
+        scaleFactor: 75
+filters: {}

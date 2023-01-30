@@ -1,0 +1,65 @@
+header:
+  tab: "Summary"
+  title: "Top-Level Summary Statistics"
+  description: "SimWrapper dashboard example"
+
+
+layout:
+  modestats:
+    - type: "pie"
+      title: "Final mode shares"
+      description: "By iteration"
+      props:
+        dataset: "*.modestats.txt"
+        ignoreColumns: ["Iteration"]
+        useLastRow: true
+
+    - type: "line"
+      title: "Mode Share vs. Iteration"
+      description: "For all modes in modestats.txt"
+      props:
+        dataset: "*.modestats.txt"
+        x: "Iteration"
+
+  phm-pkm:
+    - type: "bar"
+      title: "Passenger-hours traveled per mode"
+      description: "For all modes in modestats.txt"
+      height: 8
+      props:
+        dataset: "*.ph_modestats.txt"
+        x: "Iteration"
+        stacked: true
+
+    - type: "bar"
+      title: "Passenger-kilometers traveled per mode"
+      description: "For all modes in modestats.txt"
+      props:
+        dataset: "*.pkm_modestats.txt"
+        x: "Iteration"
+        stacked: true
+
+  scores:
+    - type: "line"
+      title: "Score statistics"
+      description: "by iteration"
+      props:
+        dataset: "*.scorestats.txt"
+        x: "ITERATION"
+
+    - type: "line"
+      title: "Leg travel distance statistics"
+      description: "avg. Average Leg distance"
+      props:
+        dataset: "*.traveldistancestats.txt"
+        x: "ITERATION"
+        columns: ['avg. Average Leg distance']
+
+    - type: "line"
+      title: "Trip travel distance statistics"
+      description: "avg. Average Trip distance"
+      props:
+        dataset: "*.traveldistancestats.txt"
+        x: "ITERATION"
+        columns: ['avg. Average Trip distance']
+
