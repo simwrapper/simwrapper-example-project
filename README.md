@@ -8,10 +8,10 @@ These files provide examples of some of the things you can do with SimWrapper. C
 
 - If you're using **Google Chrome or MS Edge**, you can click "Add Folder" on the main SimWrapper page, browse to the `data` folder in your clone, and give Chrome read access to it.
 
-- For **Firefox/Safari,** you need to install a little helper app that enables those browsers to view local files. You can run either 
-   - `java -jar mini-file-server.jar` in your cloned folder; or
-   - `simwrapper serve` to run the python tool (use `pip install simwrapper` first)
-   - Both tools simply provide a tiny file server on localhost:8080 that serves up files & folders in the directory in which it was started.
+- For **Firefox/Safari,** you need to install a little helper app that enables those browsers to view local files.
+   - Python 3.6+: run `pip install simwrapper` to install the command-line tool
+   - Then `simwrapper serve` will run the python tool which serves files for you.
+   - 'simwrapper serve' provides a tiny local file server on localhost:8080 that serves up files & folders in the directory in which it was started.
    - Now you can go to https://simwrapper.github.io/site/local/ to see the data files.
    - **Note:** this helper is only necessary for viewing _local files on your computer:_ if you publish a SimWrapper site to the web, anyone will be able to access it, regardless of browser.
 
