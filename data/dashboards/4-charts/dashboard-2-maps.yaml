@@ -53,16 +53,22 @@ layout:
       yAxisTitle: "Activity Type"
       flipAxes: true
 
-  broken:
-    - title: "(Broken) DRT Trips by PLZ Code"
-      description: "Berlin PLZ from (...source)"
+  PLZcode:
+    - title: "DRT Trips by PLZ Code"
+      description: "Berlin PLZ from (...data source)"
       type: map
       height: 8
-      boundaries: "berlin-plz.geojson"
-      boundariesJoinCol: "plz"
-      boundariesLabels: "PLAZ"
-      dataset: "drt-trips-by-plz.tsv"
-      datasetJoinCol: "plz"
-      datasetValue: "toPerSqKm"
-      exponentColors: true
-
+      shapes:
+        file: "berlin-plz.geojson"
+        join: "plz"
+      datasets:
+        drt-trips:
+          file: "drt-trips-by-plz.tsv"
+          join: "plz"
+      display:
+        fill:
+          dataset: "drt-trips"
+          columnName: "toPerSqKm"
+          colorRamp:
+            ramp: Plasma
+            steps: 7
