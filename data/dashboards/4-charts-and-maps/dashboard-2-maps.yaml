@@ -4,7 +4,7 @@ header:
   title: Maps Etc
 
 layout:
-  carriers:
+  row1carriers:
     - title: "Carriers"
       description: "Grocery delivery simulation"
       type: carriers
@@ -12,7 +12,26 @@ layout:
       network: "output_network.json.gz"
       carriers: "output_carriers.xml.gz"
 
-  maps:
+  row2maps:
+    - title: "DRT Trips by PLZ Code"
+      description: "Berlin PLZ from (...data source)"
+      type: map
+      height: 8
+      shapes:
+        file: "berlin-plz.geojson"
+        join: "plz"
+      datasets:
+        drt-trips:
+          file: "drt-trips-by-plz.tsv"
+          join: "plz"
+      display:
+        fill:
+          dataset: "drt-trips"
+          columnName: "toPerSqKm"
+          colorRamp:
+            ramp: Plasma
+            steps: 7
+
     - title: "DRT Pickups/Dropoffs"
       description: "Total DRT origins/destinations by area"
       type: hexagons
@@ -52,23 +71,3 @@ layout:
       xAxisTitle: "Time of Day"
       yAxisTitle: "Activity Type"
       flipAxes: true
-
-  PLZcode:
-    - title: "DRT Trips by PLZ Code"
-      description: "Berlin PLZ from (...data source)"
-      type: map
-      height: 8
-      shapes:
-        file: "berlin-plz.geojson"
-        join: "plz"
-      datasets:
-        drt-trips:
-          file: "drt-trips-by-plz.tsv"
-          join: "plz"
-      display:
-        fill:
-          dataset: "drt-trips"
-          columnName: "toPerSqKm"
-          colorRamp:
-            ramp: Plasma
-            steps: 7

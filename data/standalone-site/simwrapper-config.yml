@@ -1,9 +1,0 @@
-hideLeftBar: true
-fullWidth: true
-header: |
-  # Important Project™
-  Sponsored by [VSP TU-Berlin](https://vsp.berlin/)
-footer_en: footer.md
-footer_de: footer.md
-css: custom.css
-
